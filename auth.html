@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Signup</title>
+  <link rel="stylesheet" href="styleauth.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Pandora's Box 🔐</h2>
+
+    <div class="form-toggle">
+      <button onclick="showForm('login')">Login</button>
+      <button onclick="showForm('signup')">Signup</button>
+    </div>
+
+    <form id="loginForm" class="auth-form">
+      <input type="text" id="loginUsername" placeholder="Username" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <form id="signupForm" class="auth-form" style="display: none;">
+      <input type="text" id="signupUsername" placeholder="Username" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <button type="button" onclick="signup()">Signup</button>
+    </form>
+  </div>
+
+  <script src="autho.js"></script>
+</body>
+</html>

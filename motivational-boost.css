@@ -1,0 +1,180 @@
+/* Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fcfddc;
+  color: #444;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  color: #5c9a00;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6fbd9;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.header-btn {
+  text-decoration: none;
+  color: #5c9a00;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Pinterest-style Cards Layout */
+.gallery-row {
+  display: grid; /* Use CSS Grid for the layout */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive columns */
+  gap: 15px; /* Adjust gap between items */
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex; /* Enable flexbox for content alignment within the card */
+  flex-direction: column; /* Stack card header and image vertically */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  flex-grow: 1; /* Allow image to take up remaining vertical space */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.card-header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.8); /* Add a subtle background */
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.menu-dropdown a, .menu-dropdown button {
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  color: #333;
+}
+
+.menu-dropdown a:hover, .menu-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-dropdown.show {
+  display: flex;
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #5c9a00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+#toast.show {
+  opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #f6fbd9;
+  color: #666;
+  font-size: 0.9rem;
+}

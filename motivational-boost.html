@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motivational Boost - Pandora's Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="motivational-boost.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-left">
+      <img src="logo.jpeg" alt="Pandora's Box Logo" class="logo">
+    </div>
+    <div class="header-center">
+      <h1>Pandora’s Box</h1>
+    </div>
+    <div class="header-right">
+      <a href="index.html" class="header-btn">Home</a>
+    </div>
+  </header>
+
+  <section class="motivation-section">
+    <h2>Motivational Boost</h2>
+    <p class="subtitle">Get daily quotes and inspiration to lift your spirits and keep you going.</p>
+
+    <div class="gallery-row">
+      <div class="card">
+        <div class="card-header">
+          <button class="menu-btn">⋮</button>
+          <div class="menu-dropdown">
+            <a href="img1.jpeg" download>Download</a>
+            <button class="copy-btn" data-path="img1.jpeg">Copy Link</button>
+          </div>
+        </div>
+        <img src="img1.jpeg" alt="Motivation 1" class="zoomable" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <button class="menu-btn">⋮</button>
+          <div class="menu-dropdown">
+            <a href="img2.jpeg" download>Download</a>
+            <button class="copy-btn" data-path="img2.jpeg">Copy Link</button>
+          </div>
+        </div>
+        <img src="img2.jpeg" alt="Motivation 2" class="zoomable" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <button class="menu-btn">⋮</button>
+          <div class="menu-dropdown">
+            <a href="img3.jpeg" download>Download</a>
+            <button class="copy-btn" data-path="img3.jpeg">Copy Link</button>
+          </div>
+        </div>
+        <img src="img3.jpeg" alt="Motivation 3" class="zoomable" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <button class="menu-btn">⋮</button>
+          <div class="menu-dropdown">
+            <a href="img4.jpeg" download>Download</a>
+            <button class="copy-btn" data-path="img4.jpeg">Copy Link</button>
+          </div>
+        </div>
+        <img src="img4.jpeg" alt="Motivation 4" class="zoomable" />
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <button class="menu-btn">⋮</button>
+          <div class="menu-dropdown">
+            <a href="img5.jpeg" download>Download</a>
+            <button class="copy-btn" data-path="img5.jpeg">Copy Link</button>
+          </div>
+        </div>
+        <img src="img5.jpeg" alt="Motivation 5" class="zoomable" />
+      </div>
+    </div>
+
+    <div id="toast">Image Path is copied</div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Enlarged" />
+  </div>
+
+  <footer>
+    <p>© 2025 Pandora's Box. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Copy to clipboard
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const path = button.getAttribute('data-path');
+        const fullUrl = location.origin + '/' + path;
+        navigator.clipboard.writeText(fullUrl).then(() => {
+          const toast = document.getElementById('toast');
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2000);
+        });
+      });
+    });
+
+    // Toggle dropdown
+    document.querySelectorAll('.menu-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllMenus();
+        button.nextElementSibling.classList.toggle('show');
+      });
+    });
+
+    function closeAllMenus() {
+      document.querySelectorAll('.menu-dropdown').forEach(menu => menu.classList.remove('show'));
+    }
+
+    document.body.addEventListener('click', closeAllMenus);
+
+    // Image lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>

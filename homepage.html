@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandora's Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-fcfddc text-gray-800 font-inter">
+    <div class="p-4 md:p-8 lg:max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <img src="logo.png" alt="Pandora's Box Logo" class="rounded-full w-12 h-12 object-cover">
+            </div>
+            <div class="header-center">
+                <h1 style="font-family: 'Great Vibes', cursive;">Pandora’s Box</h1>
+            </div>
+            <div class="header-right">
+                <a href="profile.html" class="header-btn bg-secondary-color text-black rounded-full px-4 py-2 font-bold transition-all hover:bg-primary-color hover:text-white">
+                    <i class="fas fa-user-circle mr-2"></i>My Profile
+                </a>
+            </div>
+        </header>
+
+        <!-- Tagline -->
+        <section class="tagline my-8 max-w-2xl mx-auto text-center text-lg text-gray-600">
+            <p>We all have a Pandora’s Box inside us. But what if, instead of fear and chaos, opening it gave you clarity, peace, and healing?</p>
+        </section>
+
+        <!-- Carousel -->
+        <section class="carousel" id="carousel">
+            <div class="slides">
+                <div class="slide">✨ Mental health matters more than marks.</div>
+                <div class="slide">🧠 Take a break. Breathe. Reflect. Repeat.</div>
+                <div class="slide">🌱 Healing isn’t linear, but it is possible.</div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services text-center py-8">
+            <h2>Our Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Mood Tracking</h3>
+                    <p>Track your emotional patterns over time and gain insights into your well-being.</p>
+                    <a href="mood-tracker.html" class="text-primary-color font-bold">Try it</a>
+                </div>
+                <div class="card">
+                    <h3>Journaling</h3>
+                    <p>A private safe space to write, reflect, and vent without judgment.</p>
+                    <a href="journal.html" class="text-primary-color font-bold">Private Journaling</a>
+                </div>
+                <div class="card">
+                    <h3>Self Care Checklist</h3>
+                    <p>Check off daily goals and stay kind to your mind. Add or remove your own habits.</p>
+                    <a href="selfcare.html" class="text-primary-color font-bold">Take Care</a>
+                </div>
+                <div class="card">
+                    <h3>Motivational Boost</h3>
+                    <p>Get daily quotes and inspiration to lift your spirits and keep you going.</p>
+                    <a href="motivational-boost.html" class="text-primary-color font-bold">Inspire Me</a>
+                </div>
+                <div class="card">
+                    <h3>Explore More Services</h3>
+                    <p>Discover more tools designed to help you heal, grow, and glow ✨</p>
+                    <a href="#" class="text-primary-color font-bold">Explore All</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="bg-white rounded-lg shadow-lg p-6 text-center text-gray-600 my-8">
+            <h2 class="text-2xl font-semibold mb-4 text-primary-color">Need Immediate Help?</h2>
+            <p class="mb-2">If you or someone you know is in immediate danger, please call a helpline or emergency services.</p>
+            <div class="flex justify-center items-center space-x-4">
+                <a href="#" class="text-blue-600 hover:underline">
+                    <i class="fas fa-headset mr-2"></i>Talk Helpline
+                </a>
+                <span class="text-gray-400">|</span>
+                <a href="#" class="text-blue-600 hover:underline">
+                    <i class="fas fa-map-marker-alt mr-2"></i>Nearby Therapists
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Chatbot Toggle Button -->
+    <div id="chatbot-toggle-btn" class="chatbot-toggle-btn cursor-pointer">
+        <img src="elpis.png" alt="Elpis Chatbot" class="w-full h-full object-cover rounded-full">
+    </div>
+
+    <!-- Chatbot Window (Initially hidden) -->
+    <div id="chatbot-container" class="chatbot-container hidden">
+        <div class="chatbot-header">
+            <h3 class="font-semibold text-lg">Elpis Chatbot</h3>
+            <button onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <!-- Messages will be injected here -->
+        </div>
+        <div class="chat-input">
+            <input id="user-input" type="text" placeholder="Type your message..." />
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

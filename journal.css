@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fcfcca;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff3b0;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  header .logo {
+    width: 50px;
+    margin-right: 1rem;
+  }
+  
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .journal textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: 2px solid #f5d76e;
+    border-radius: 8px;
+    resize: vertical;
+  }
+  
+  button {
+    background-color: #f5c518;
+    color: #000;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  
+  .entries ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .entries li {
+    background: #fffde7;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-left: 4px solid #ffd54f;
+  }
+  

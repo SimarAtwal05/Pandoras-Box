@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pandora's Box</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Main Content -->
+  <div class="main-content" id="main-content">
+    <header class="main-header">
+        <div class="header-left">
+          <img src="logo.png" alt="Pandora's Box Logo" class="logo">
+        </div>
+      
+        <div class="header-center">
+          <h1>Pandora’s Box</h1>
+        </div>
+      
+        <div class="header-right">
+          <!-- Profile button is shown if the user is logged in -->
+          <a href="profile.html" class="header-btn" id="profile-btn" style="display: none;">👤 My Profile</a>
+          <!-- Login and Signup buttons are shown if the user is not logged in -->
+          <a href="login.html" class="header-btn" id="login-btn">Login</a>
+          <a href="signup.html" class="header-btn" id="signup-btn">Sign Up</a>
+        </div>
+    </header>
+    
+    <!-- Tagline -->
+    <section class="tagline">
+      <p>We all have a Pandora’s Box inside us. But what if, instead of fear and chaos, opening it gave you clarity, peace, and healing?</p>
+    </section>
+
+    <!-- Carousel -->
+    <section class="carousel" id="carousel">
+      <div class="slides">
+        <div class="slide active">✨ Mental health matters more than marks.</div>
+        <div class="slide">🧠 Take a break. Breathe. Reflect. Repeat.</div>
+        <div class="slide">🌱 Healing isn’t linear, but it is possible.</div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Mood Tracking</h3>
+          <p>Track your emotional patterns over time and gain insights into your well-being.</p>
+          <a href="mood-tracker.html">Try it</a>
+        </div>
+        <div class="card">
+          <h3>Journaling</h3>
+          <p>A private safe space to write, reflect, and vent without judgment.</p>
+          <a href="journal.html" class="service-card">Private Journaling</a>
+        </div>
+        <div class="card">
+          <h3>Motivational Boost</h3>
+          <p>Get daily quotes and inspiration to lift your spirits and keep you going.</p>
+          <a href="#">Inspire Me</a>
+        </div>
+        <div class="card">
+            <h3>Selfcare Checklist</h3>
+            <p>It starts with a small change!</p>
+            <a href="selfcare.html">Let's get it done!</a>
+          </div>
+        <!-- Add more cards if needed -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Pandora's Box. All rights reserved.</p>
+    </footer>
+  </div>
+  <!-- Chatbot -->
+     <button id="chatbot-button" class="chatbot-btn">
+      <img src="elpis.png" alt="Chatbot Icon" class="chatbot-icon">
+  </button>
+     <div id="chatbot-modal" class="chatbot-modal">
+      <div class="chatbot-header">
+          <span id="close-chatbot" class="close-btn">&times;</span>
+          <h2>Elpis</h2>
+      </div>
+      <div id="chatbot-messages" class="chatbot-messages"></div>
+      <div class="chatbot-input">
+          <input type="text" id="userMessage" placeholder="Type your message..." />
+          <button id="send-message" class="send-btn">Send</button>
+      </div>
+  </div>
+  <footer class="footer" id=" footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Pandora’s Box</h3>
+        <p>Unbox your peace. Heal your mind. Reclaim your joy.</p>
+        <p>© 2025 Pandora’s Box. All rights reserved.</p>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Quick Access</h4>
+        <ul class="footer-links">
+            <li><a href="selfcare.html">🛁 Self Care</a></li>
+            <li><a href="therapists.html">💬 Talk to Someone</a></li>
+            <li><a href="relax.html">🎧 Relaxing Audios</a></li>
+            <li><a href="profile.html#depression-quiz">📝 Tests & Guidance</a></li>
+          </ul>
+          
+      </div>
+      
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

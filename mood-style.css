@@ -1,0 +1,249 @@
+/* Reset & Base */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fefde5;
+    color: #444;
+  }
+  
+  /* Header */
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f6fbd9;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .main-header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8em;
+    color: #5c9a00;
+    margin: 0;
+  }
+  
+  .header-btn {
+    margin-left: 15px;
+    padding: 8px 18px;
+    background-color: #c6e377;
+    color: #000;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .header-btn:hover {
+    background-color: #addb5f;
+    color: #fff;
+  }
+  
+  /* Mood Tracker Form */
+  .mood-tracker {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mood-tracker h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #5c9a00;
+    margin-bottom: 20px;
+  }
+  
+  .mood-tracker form p {
+    margin: 20px 0 10px;
+    font-weight: bold;
+  }
+  
+  .mood-tracker select,
+  .mood-tracker textarea,
+  .mood-tracker input[type="range"] {
+    padding: 10px;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .mood-tracker textarea {
+    resize: vertical;
+  }
+  
+  .mood-tracker input[type="radio"] {
+    margin-right: 6px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+  }
+  
+  .submit-btn {
+    background-color: #5c9a00;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #4a7f00;
+  }
+  
+  #mood-result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fefbd3;
+    border-radius: 10px;
+    font-size: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  /* Footer */
+  footer {
+    background: #fefbd3;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 20px;
+  }
+  
+  .option-group button {
+    background-color: #e2f4bf;
+    border: 1px solid #cde39f;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .option-group button:hover {
+    background-color: #d3f18b;
+  }
+  
+  .option-group button.selected {
+    background-color: #addb5f;
+    border-color: #5c9a00;
+    color: #fff;
+  }
+  
+  .step-indicator {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .option-group button {
+    background-color: #e2f4bf;
+    border: 1px solid #cde39f;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .option-group button:hover {
+    background-color: #d3f18b;
+  }
+  
+  .option-group button.selected {
+    background-color: #addb5f;
+    border-color: #5c9a00;
+    color: #fff;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 20px auto 0;
+  }
+
+  /* Progress Bar */
+.progress-bar {
+    height: 8px;
+    background-color: #addb5f;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  /* Question Fade Animation */
+  .fade-in {
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .result-header {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .tip-card {
+    background: #fefbd3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  
+  .tip-card h4 {
+    margin-bottom: 10px;
+    color: #5c9a00;
+  }
+  
+  .result-bottom {
+    text-align: center;
+    margin-top: 30px;
+  }
+  

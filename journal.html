@@ -1,0 +1,47 @@
+<script>
+    if (localStorage.getItem("is_logged_in") !== "true") {
+      window.location.href = "auth.html";
+    }
+  </script>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Journal | Pandora’s Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+          <img src="logo.png" alt="Pandora's Box Logo" class="logo">
+        </div>
+      
+        <div class="header-center">
+          <h1>Pandora’s Box</h1>
+        </div>
+      
+        <div class="header-right">
+          <!-- Profile button is shown if the user is logged in -->
+          <a href="index.html" class="header-btn" id="profile-btn" style="display: none;">👤 Home</a>
+        </div>
+    </header>
+
+  <main>
+    <section class="journal">
+      <h2>Dear Diary...</h2>
+      <input type="date" id="journal-date" />
+      <textarea id="journal-entry" placeholder="Type your thoughts here..."></textarea>
+      <button onclick="saveEntry()">Save Entry</button>
+    </section>
+
+    <section class="entries">
+      <h2>Past Entries</h2>
+      <ul id="entry-list"></ul>
+    </section>
+  </main>
+
+  <script src="journal.js"></script>
+</body>
+</html>

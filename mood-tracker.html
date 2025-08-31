@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Tracker - Pandora's Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mood-style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-left">
+      <img src="logo.png" alt="Pandora's Box Logo" class="logo">
+    </div>
+    <div class="header-center">
+      <h1>Pandora’s Box</h1>
+    </div>
+    <div class="header-right">
+      <a href="index.html" class="header-btn">Home</a>
+    </div>
+  </header>
+
+  <!-- Mood Tracker -->
+  <section class="mood-tracker">
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <h2>Track Your Mood</h2>
+
+    <div id="question-container"></div>
+
+    <div class="navigation-buttons">
+      <button id="prevBtn" class="submit-btn" disabled>Previous</button>
+      <button id="nextBtn" class="submit-btn">Next</button>
+    </div>
+
+    <div id="mood-result"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Pandora's Box. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const questions = [
+      { id: 'mood', question: 'How are you feeling today?', options: ['😊 Happy', '😢 Sad', '😟 Anxious', '😠 Angry', '😌 Calm'], values: ['happy', 'sad', 'anxious', 'angry', 'calm'] },
+      { id: 'balance', question: 'How emotionally balanced have you felt today?', options: ['Very balanced', 'Mostly okay', 'All over the place'], values: ['balanced', 'okay', 'chaotic'] },
+      { id: 'sleep', question: 'How well did you sleep?', options: ['Great', 'Okay', 'Poor'], values: ['great', 'okay', 'poor'] },
+      { id: 'stress', question: 'What is your current stress level?', options: ['Low', 'Medium', 'High'], values: ['low', 'medium', 'high'] },
+      { id: 'social', question: 'Did you have meaningful social interaction today?', options: ['Yes', 'No'], values: ['yes', 'no'] },
+      { id: 'energy', question: 'How is your energy level today?', options: ['High', 'Medium', 'Low'], values: ['high', 'medium', 'low'] },
+      { id: 'focus', question: 'How focused have you been?', options: ['Very Focused', 'Somewhat', 'Distracted'], values: ['focused', 'somewhat', 'distracted'] },
+      { id: 'appetite', question: 'How has your appetite been?', options: ['Normal', 'Less than usual', 'More than usual'], values: ['normal', 'less', 'more'] },
+      { id: 'exercise', question: 'Did you do any physical activity?', options: ['Yes', 'No'], values: ['yes', 'no'] },
+      { id: 'outdoors', question: 'Did you spend time outdoors today?', options: ['Yes', 'No'], values: ['yes', 'no'] }
+    ];
+
+    let currentStep = 0;
+    const responses = {};
+
+    const container = document.getElementById('question-container');
+    const resultBox = document.getElementById('mood-result');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const progressBar = document.getElementById('progress-bar');
+
+    function updateProgressBar() {
+      const percent = ((currentStep + 1) / questions.length) * 100;
+      progressBar.style.width = percent + '%';
+    }
+
+    function renderQuestion() {
+      const q = questions[currentStep];
+      container.classList.remove('fade-in');
+      void container.offsetWidth;
+
+      container.innerHTML = `
+        <p class="step-indicator">Question ${currentStep + 1} of ${questions.length}</p>
+        <p><strong>${q.question}</strong></p>
+        <div class="option-group" data-field="${q.id}">
+          ${q.options.map((opt, idx) => `
+            <button type="button" class="${responses[q.id] === q.values[idx] ? 'selected' : ''}" 
+              data-value="${q.values[idx]}">${opt}</button>
+          `).join('')}
+        </div>
+      `;
+      container.classList.add('fade-in');
+
+      prevBtn.disabled = currentStep === 0;
+      nextBtn.textContent = currentStep === questions.length - 1 ? 'Submit' : 'Next';
+
+      container.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const value = btn.dataset.value;
+          responses[q.id] = value;
+          container.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+
+      updateProgressBar();
+    }
+
+    nextBtn.addEventListener('click', () => {
+      const qId = questions[currentStep].id;
+      if (!responses[qId]) {
+        alert('Please select an answer to continue.');
+        return;
+      }
+
+      if (currentStep === questions.length - 1) {
+        showResults();
+      } else {
+        currentStep++;
+        renderQuestion();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        renderQuestion();
+      }
+    });
+
+    function showResults() {
+      const emojiMap = {
+        happy: '😊', sad: '😢', anxious: '😟', angry: '😠', calm: '😌'
+      };
+
+      const tips = {
+        sleep: {
+          poor: "Try winding down with a screen-free routine.",
+          okay: "A little more rest might boost your mood!",
+          great: "Awesome! Rest is a superpower 💪"
+        },
+        stress: {
+          high: "Deep breathing and breaks can really help.",
+          medium: "Try stretching or a short walk.",
+          low: "Nice! Keep doing what you're doing 😌"
+        },
+        social: {
+          no: "Connection helps – even a quick message can uplift 💬",
+          yes: "Social bonds are powerful. Keep them strong!"
+        },
+        balance: {
+          chaotic: "Try grounding techniques like journaling or breathwork.",
+          okay: "Mixed days are normal. Reflection helps.",
+          balanced: "You seem in tune — keep nurturing that awareness!"
+        }
+      };
+
+      const mood = responses.mood;
+      const sleep = responses.sleep;
+      const stress = responses.stress;
+      const social = responses.social;
+      const balance = responses.balance;
+
+      const tipBox = (title, key, value) => `
+        <div class="tip-card">
+          <h4>${title}</h4>
+          <p>${tips[key][value]}</p>
+        </div>
+      `;
+
+      container.style.display = "none";
+      nextBtn.style.display = "none";
+      prevBtn.style.display = "none";
+      progressBar.style.display = "none";
+
+      resultBox.innerHTML = `
+        <div class="result-header">
+          <h2>${emojiMap[mood] || '🧠'} You're feeling ${mood}</h2>
+        </div>
+        <div class="result-grid">
+          ${tipBox('Emotional Balance', 'balance', balance)}
+          ${tipBox('Sleep', 'sleep', sleep)}
+          ${tipBox('Stress', 'stress', stress)}
+          ${tipBox('Social Life', 'social', social)}
+        </div>
+        <div class="result-bottom">
+          <button class="submit-btn" onclick="location.reload()">Restart</button>
+        </div>
+      `;
+    }
+
+    renderQuestion();
+  </script>
+
+</body>
+</html>

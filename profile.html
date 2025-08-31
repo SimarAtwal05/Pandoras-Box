@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Pandora's Box</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Header Styles */
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #2c3e50;
+        color: #fff;
+      }
+
+      .header-left img {
+        width: 50px;
+      }
+
+      .header-center h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2rem;
+      }
+
+      .header-right a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #6c63ff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .header-right a:hover {
+        background-color: #4e4bdb;
+      }
+
+      /* Profile Section */
+      .profile-section {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f9;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .profile-section h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .profile-section p {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      .profile-info {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .profile-info div {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 30%;
+      }
+
+      .profile-info h4 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .profile-info p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* Mental Health Tests Links */
+      .quiz-section {
+        margin: 20px 0;
+      }
+
+      .quiz-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .quiz-links {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .quiz-links li {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .quiz-links a {
+        text-decoration: none;
+        color: #6c63ff;
+        transition: color 0.3s ease;
+      }
+
+      .quiz-links a:hover {
+        color: #4e4bdb;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer-column {
+        margin: 20px 0;
+      }
+
+      .therapist-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      .therapist-list li::before {
+        content: "💼 ";
+        margin-right: 5px;
+        color: #6c63ff;
+      }
+    </style>
+</head>
+
+<body>
+  <!-- Header Section (Common across all pages) -->
+  <header class="main-header">
+    <div class="header-left">
+      <img src="logo.png" alt="Pandora's Box Logo" class="logo" />
+    </div>
+    <div class="header-center">
+      <h1>Pandora’s Box</h1>
+    </div>
+    <div class="header-right">
+      <a href="index.html" class="header-btn">Home</a>
+      <a href="login.html" class="header-btn">Logout</a>
+    </div>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile-section">
+    <h3>Welcome, <span id="username">User</span></h3>
+    <p>Your personalized mental health support starts here. Here’s a snapshot of your current status.</p>
+
+    <!-- Profile Info -->
+    <div class="profile-info">
+      <div>
+        <h4>Recent Activity</h4>
+        <p>Last mood entry: 😊 Happy</p>
+        <p>Last journaling entry: "Feeling optimistic about the future."</p>
+      </div>
+
+      <div>
+        <h4>Goal Progress</h4>
+        <p>Set Goal: Reduce anxiety</p>
+        <p>Progress: 75% Complete</p>
+      </div>
+
+      <div>
+        <h4>Your Support</h4>
+        <p>Next check-in: 1 day left</p>
+        <p>Available Support: 24/7 chat with a counselor</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mental Health Tests Links Section -->
+  <section class="quiz-section">
+    <h3>Mental Health Tests</h3>
+    <ul class="quiz-links">
+      <li><a href="https://www.psychologytoday.com/us/tests/depression/depression-test" target="_blank">Depression Test (Psychology Today)</a></li>
+      <li><a href="https://www.anxietycoach.com/self-test/" target="_blank">Anxiety Test (Anxiety Coach)</a></li>
+      <li><a href="https://www.mayoclinic.org/diseases-conditions/ptsd/symptoms-causes/syc-20355966" target="_blank">PTSD Test (Mayo Clinic)</a></li>
+      <li><a href="https://www.psychologytoday.com/us/tests/personality" target="_blank">Personality Test (Psychology Today)</a></li>
+      <li><a href="https://www.cdc.gov/nchs/fastats/suicide.htm" target="_blank">Suicide Risk Assessment (CDC)</a></li>
+    </ul>
+  </section>
+
+
+</body>
+
+</html>

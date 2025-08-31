@@ -1,0 +1,128 @@
+<!-- Relaxing Audios Section -->
+<section id="relaxing-audios" class="section">
+    <h3>Relaxing Audios for Your Well-being</h3>
+    <p>Take a moment to relax and relieve stress with these calming sounds and music. Click to listen:</p>
+    
+    <div class="audio-list">
+        <!-- Nature Sounds -->
+        <div class="audio-item">
+            <h4>🌿 Nature Sounds</h4>
+            <audio controls>
+                <source src="audio/nature-sounds.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Calming Music -->
+        <div class="audio-item">
+            <h4>🎶 Calming Music</h4>
+            <audio controls>
+                <source src="audio/calming-music.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Guided Meditation -->
+        <div class="audio-item">
+            <h4>🧘‍♀️ Guided Meditation</h4>
+            <audio controls>
+                <source src="audio/guided-meditation.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Styles and Existing Page Styles -->
+<style>
+    /* General Section Style */
+    .section {
+        margin: 30px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    /* Relaxing Audios Section Style */
+    #relaxing-audios h3 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #6c63ff;
+        margin-bottom: 20px;
+    }
+
+    #relaxing-audios p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .audio-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .audio-item {
+        text-align: center;
+    }
+
+    .audio-item h4 {
+        font-size: 18px;
+        color: #6c63ff;
+        margin-bottom: 10px;
+    }
+
+    audio {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .audio-list {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Footer Column Layout */
+    .footer-column {
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    /* Footer Text */
+    .footer-column h4 {
+        font-size: 18px;
+        color: #6c63ff;
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .footer-column ul li::before {
+        content: "💼 ";
+        margin-right: 5px;
+        color: #6c63ff;
+    }
+
+    /* Media Queries for Mobile Layout */
+    @media (max-width: 768px) {
+        .footer-column {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            padding-left: 0;
+        }
+    }
+</style>
